@@ -13,6 +13,5 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   background-color: #ecf0f1;
-  height: 100vh;
 }
 </style>

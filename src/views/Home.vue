@@ -16,6 +16,10 @@
         <p class="title">Tedavi Edilen</p>
         <p class="number">{{ recovered }}</p>
       </div>
+      <div class="div7 box">
+        <p class="title">Bugün Vaka</p>
+        <p class="number">{{ todayCases }}</p>
+      </div>
       <div class="div4 box">
         <p class="title">Aktif Vaka</p>
         <p class="number">{{ active }}</p>
@@ -27,6 +31,10 @@
       <div class="div6 box">
         <p class="title">Milyon Başına Ölüm</p>
         <p class="number">{{ deathsPerMillion }}</p>
+      </div>
+      <div class="div8 box">
+        <p class="title">Milyon Başına Vaka</p>
+        <p class="number">{{ casesPerOneMillion }}</p>
       </div>
     </div>
   </div>
@@ -42,7 +50,9 @@ export default {
       recovered: "",
       active: "",
       critical: "",
-      deathsPerMillion: ''
+      deathsPerMillion: '',
+      todayCases: '',
+      casesPerOneMillion: ''
     };
   },
   created() {
@@ -57,6 +67,8 @@ export default {
         this.active = data.active;
         this.critical = data.critical;
         this.deathsPerMillion = data.deathsPerOneMillion
+        this.todayCases = data.todayCases
+        this.casesPerOneMillion = data.casesPerOneMillion
       });
   }
 };
@@ -81,6 +93,7 @@ export default {
   max-width: 1200px;
   margin: 0 auto;
   margin-top: 5rem;
+  padding-bottom: 2rem;
 }
 
 
@@ -129,5 +142,11 @@ export default {
 }
 .div6 {
   background-color: #e74c3c;
+}
+.div7 {
+  background-color: #8e44ad;
+}
+.div8 {
+  background-color: #16a085;
 }
 </style>
