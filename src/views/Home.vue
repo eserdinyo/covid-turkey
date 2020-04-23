@@ -36,12 +36,21 @@
         <p class="title">Milyon Başına Vaka</p>
         <p class="number">{{ casesPerOneMillion }}</p>
       </div>
+      <div class="div9 box">
+        <p class="title">Bugün Ölüm</p>
+        <p class="number">{{ todayDeaths }}</p>
+      </div>
+      <div class="div10 box">
+        <p class="title">Toplam Test</p>
+        <p class="number">{{ tests }}</p>
+      </div>
     </div>
+    <p>rümeysa</p>
   </div>
 </template>
 
 <script>
-const API_URL = "https://corona.lmao.ninja/countries/turkey";
+const API_URL = "https://corona.lmao.ninja/v2/countries/turkey";
 export default {
   data() {
     return {
@@ -52,7 +61,9 @@ export default {
       critical: "",
       deathsPerMillion: '',
       todayCases: '',
-      casesPerOneMillion: ''
+      casesPerOneMillion: '',
+      todayDeaths: '',
+      tests: ''
     };
   },
   created() {
@@ -69,6 +80,8 @@ export default {
         this.deathsPerMillion = data.deathsPerOneMillion
         this.todayCases = data.todayCases
         this.casesPerOneMillion = data.casesPerOneMillion
+        this.todayDeaths = data.todayDeaths
+        this.tests = data.tests
       });
   }
 };
@@ -148,5 +161,11 @@ export default {
 }
 .div8 {
   background-color: #16a085;
+}
+.div9 {
+  background-color: #130f40;
+}
+.div10 {
+  background-color: #130f40;
 }
 </style>
